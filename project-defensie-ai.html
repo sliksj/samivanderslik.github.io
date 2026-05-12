@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Audio Classificatie — Sami van der Slik</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2b4a; --blue: #2563eb; --blue-light: #dbeafe;
+      --grey: #64748b; --border: #e2e8f0;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: #f8fafc; }
+
+    nav {
+      height: 56px; border-bottom: 1px solid var(--border);
+      background: rgba(248,250,252,0.9); backdrop-filter: blur(10px);
+      display: flex; align-items: center; padding: 0 40px; gap: 12px;
+      position: sticky; top: 0; z-index: 10;
+    }
+    .back { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; }
+    .nav-sep { color: #cbd5e1; font-size: 13px; }
+    .nav-page { font-size: 13px; color: var(--grey); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e3a6e 60%, #2563eb 100%);
+      padding: 72px 40px 64px; position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .hero-inner { position: relative; max-width: 820px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; color: #93c5fd; margin-bottom: 18px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: white; margin-bottom: 8px; }
+    .hero-subtitle { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.5); margin-bottom: 20px; letter-spacing: 1px; }
+    .hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.7); max-width: 520px; line-height: 1.7; margin-bottom: 36px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 32px; }
+    .meta { display: flex; flex-direction: column; gap: 4px; }
+    .meta-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.35); }
+    .meta-value { font-size: 14px; font-weight: 500; color: white; }
+
+    .content { max-width: 820px; margin: 0 auto; padding: 56px 40px 80px; display: flex; flex-direction: column; gap: 48px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; opacity: 0; animation: up 0.5s ease 0.15s forwards; }
+    .tag { font-size: 12px; font-weight: 500; padding: 5px 14px; background: var(--blue-light); color: var(--blue); border-radius: 20px; }
+
+    .section { opacity: 0; animation: up 0.5s ease 0.25s forwards; }
+    .section:nth-child(3) { animation-delay: 0.35s; }
+    .section:nth-child(4) { animation-delay: 0.45s; }
+    .section:nth-child(5) { animation-delay: 0.55s; }
+    .section:nth-child(6) { animation-delay: 0.65s; }
+
+    .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+    .section-text { font-size: 15px; font-weight: 300; line-height: 1.8; color: #475569; }
+
+    .role-box { border-left: 3px solid var(--blue); padding: 16px 20px; background: white; border-radius: 0 10px 10px 0; }
+    .role-title { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+    .role-text { font-size: 14px; font-weight: 300; color: #475569; line-height: 1.7; }
+
+    ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    ul.bullets li { font-size: 14px; font-weight: 300; color: #475569; line-height: 1.65; padding-left: 18px; position: relative; }
+    ul.bullets li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border: 1.5px solid var(--blue); border-radius: 50%; }
+
+    .skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+    .skill-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+    .skill-icon { width: 34px; height: 34px; background: var(--blue-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; }
+    .skill-name { font-size: 14px; font-weight: 500; color: var(--navy); }
+    .skill-desc { font-size: 12px; color: var(--grey); line-height: 1.5; }
+
+    .back-row { border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: flex-end; opacity: 0; animation: up 0.5s ease 0.75s forwards; }
+    .back-btn { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--blue); border-radius: 8px; transition: background 0.2s, color 0.2s; }
+    .back-btn:hover { background: var(--blue); color: white; }
+
+    @keyframes up { to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px; }
+      .content { padding: 40px 20px 60px; }
+      nav { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="back" href="projecten.html">← Projecten</a>
+    <span class="nav-sep">/</span>
+    <span class="nav-page">Ministerie van Defensie</span>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Ministerie van Defensie · C&amp;C Ondersteuningscommando</div>
+      <h1 class="hero-title">AI Audio Classificatie</h1>
+      <div class="hero-subtitle">Dark Tech project</div>
+      <p class="hero-sub">AI-gedreven audio classificatie voor het analyseren van complexe signaalpatronen — real-time, op lokale hardware.</p>
+      <div class="hero-meta">
+        <div class="meta"><span class="meta-label">Periode</span><span class="meta-value">Februari 2026 — Heden</span></div>
+        <div class="meta"><span class="meta-label">Rol</span><span class="meta-value">AI Engineer</span></div>
+        <div class="meta"><span class="meta-label">Opdrachtgever</span><span class="meta-value">Ministerie van Defensie</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">Deep Learning</span>
+      <span class="tag">YAMNet</span>
+      <span class="tag">Audio Classificatie</span>
+      <span class="tag">Data Pipeline</span>
+      <span class="tag">Real-time Analyse</span>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Over het project</div>
+      <p class="section-text">Binnen het Dark Tech project heb ik bij het Command &amp; Control Ondersteuningscommando van het Ministerie van Defensie gewerkt aan een AI-systeem voor de automatische classificatie van audio- en signaalpatronen. Het doel was om handmatige analyse te vervangen door een geautomatiseerde, real-time oplossing die draait op lokale hardware — zonder afhankelijkheid van externe clouddiensten.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Mijn rol</div>
+      <div class="role-box">
+        <div class="role-title">AI Engineer — Volledig projecttraject</div>
+        <div class="role-text">Van onderzoek en modelselectie tot optimalisatie en implementatie was ik verantwoordelijk voor het gehele technische traject. Ik werkte analytisch en resultaatgericht aan de ontwikkeling van de data-pipeline en de integratie van het model op bestaande hardware.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Wat heb ik gedaan?</div>
+      <ul class="bullets">
+        <li>Onderzoek gedaan naar en geselecteerd van gespecialiseerde deep learning-modellen, waaronder YAMNet, voor de classificatie van complexe audio- en signaalpatronen.</li>
+        <li>Modellen geoptimaliseerd en geïmplementeerd op lokale hardware, zodat real-time automatische analyses mogelijk zijn zonder internetverbinding.</li>
+        <li>Een volledige data-pipeline ontwikkeld voor de automatische verwerking en analyse van audiobestanden.</li>
+        <li>Probleemoplossend en leergierig te werk gegaan bij het selecteren en testen van de juiste modellen voor dit specifieke gebruik.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Gebruikte skills</div>
+      <div class="skill-grid">
+        <div class="skill-card">
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="skill-name">Python</div>
+          <div class="skill-desc">Modelbouw, pipeline en automatisering.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div class="skill-name">Deep Learning</div>
+          <div class="skill-desc">YAMNet model voor audio classificatie.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19V6l12-3v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="15" r="3"/></svg></div>
+          <div class="skill-name">Audio Analyse</div>
+          <div class="skill-desc">Classificatie van signaalpatronen.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="skill-name">Analytisch denken</div>
+          <div class="skill-desc">Modelselectie en probleemoplossing.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Resultaat &amp; impact</div>
+      <p class="section-text">Het systeem maakt het mogelijk om audiobestanden automatisch en in real-time te analyseren en te classificeren, zonder handmatige tussenkomst. Dit versnelt het analyseproces aanzienlijk en vermindert de afhankelijkheid van menselijke beoordeling bij tijdkritische situaties.</p>
+    </div>
+
+    <div class="back-row">
+      <a class="back-btn" href="projecten.html">← Terug naar projecten</a>
+    </div>
+  </div>
+
+</body>
+</html>
