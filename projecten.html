@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projecten — Sami van der Slik</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2b4a;
+      --blue: #2563eb;
+      --blue-light: #dbeafe;
+      --grey: #64748b;
+      --border: #e2e8f0;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f8fafc;
+      min-height: 100vh;
+    }
+
+    nav {
+      height: 56px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(248,250,252,0.9);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .back { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; }
+    .nav-sep { color: #cbd5e1; font-size: 13px; }
+    .nav-page { font-size: 13px; color: var(--grey); }
+
+    .page-header {
+      padding: 64px 40px 48px;
+      max-width: 900px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: up 0.5s ease 0.1s forwards;
+    }
+
+    .page-header-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    .page-header-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+
+    .projects {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      text-decoration: none;
+      color: var(--navy);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    .project-card:nth-child(1) { animation: up 0.5s ease 0.2s forwards; }
+    .project-card:nth-child(2) { animation: up 0.5s ease 0.3s forwards; }
+    .project-card:nth-child(3) { animation: up 0.5s ease 0.4s forwards; }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(37,99,235,0.11);
+      border-color: #bfdbfe;
+    }
+
+    .project-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      display: block;
+    }
+
+    /* Navy gradient for Defensie projects */
+    .visual-navy {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e3a6e 60%, #2563eb 100%);
+    }
+
+    /* Green gradient for Bladconfetti */
+    .visual-green {
+      background: linear-gradient(135deg, #14532d 0%, #166534 55%, #16a34a 100%);
+    }
+
+    .visual-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .visual-label {
+      position: relative;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 2px;
+      text-align: center;
+      padding: 16px;
+      line-height: 1.4;
+    }
+
+    .project-info {
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .project-tag {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 10px;
+      background: var(--blue-light);
+      color: var(--blue);
+      border-radius: 20px;
+    }
+
+    .project-tag.green {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .project-org {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--grey);
+    }
+
+    .project-desc {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #475569;
+      flex: 1;
+    }
+
+    .project-cta {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--blue);
+    }
+
+    @keyframes up {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .project-card { grid-template-columns: 1fr; }
+      .project-visual { min-height: 160px; }
+      .projects { padding: 0 20px 60px; }
+      .page-header { padding: 40px 20px 32px; }
+      nav { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="back" href="index.html">← Terug</a>
+    <span class="nav-sep">/</span>
+    <span class="nav-page">Projecten</span>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-eyebrow">Mijn werk</div>
+    <h1 class="page-header-title">Projecten</h1>
+  </header>
+
+  <section class="projects">
+
+    <!-- PROJECT 1: Defensie AI -->
+    <a class="project-card" href="project-defensie-ai.html">
+      <div class="project-visual visual-navy">
+        <div class="visual-grid"></div>
+        <div class="visual-label">MINISTERIE VAN<br/>DEFENSIE</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Deep Learning</span>
+          <span class="project-tag">AI</span>
+        </div>
+        <div class="project-org">Ministerie van Defensie · Feb. 2026 – Heden</div>
+        <div class="project-title">AI Audio Classificatie</div>
+        <div class="project-desc">
+          Ontwikkeling van een AI-systeem voor de automatische classificatie van audio- en signaalpatronen (Dark Tech project) bij het Command &amp; Control Ondersteuningscommando. Real-time analyse op lokale hardware met YAMNet deep learning-modellen.
+        </div>
+        <div class="project-cta">Bekijk project →</div>
+      </div>
+    </a>
+
+    <!-- PROJECT 2: Defensie Inkoop -->
+    <a class="project-card" href="project-defensie-inkoop.html">
+      <div class="project-visual visual-navy">
+        <div class="visual-grid"></div>
+        <div class="visual-label">MINISTERIE VAN<br/>DEFENSIE</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="project-tag">Excel</span>
+          <span class="project-tag">IT Consultancy</span>
+          <span class="project-tag">Power BI</span>
+        </div>
+        <div class="project-org">Ministerie van Defensie · Sept. 2025 – Jan. 2026</div>
+        <div class="project-title">Digitale Inkoopkalender</div>
+        <div class="project-desc">
+          Centrale applicatie ontwikkeld voor de inkoopkalender van de afdeling Inkoop-IT. Management krijgt snel inzicht in volumes, budgetten en planning. Excel-overzichten vervangen door een efficiënte digitale oplossing.
+        </div>
+        <div class="project-cta">Bekijk project →</div>
+      </div>
+    </a>
+
+    <!-- PROJECT 3: Bladconfetti -->
+    <a class="project-card" href="project-bladconfetti.html">
+      <div class="project-visual visual-green">
+        <div class="visual-grid"></div>
+        <div class="visual-label">BLADCONFETTI</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag green">IT Consultancy</span>
+        </div>
+        <div class="project-org">Bladconfetti · Feb. 2025 – Jun. 2025</div>
+        <div class="project-title">Confetti Calculator</div>
+        <div class="project-desc">
+          Interactieve Confetti Calculator ontwikkeld voor de webshop van Bladconfetti.nl. Klanten kunnen snel uitrekenen hoeveel confetti zij nodig hebben en krijgen direct passende productaanbevelingen.
+        </div>
+        <div class="project-cta">Bekijk project →</div>
+      </div>
+    </a>
+
+  </section>
+
+</body>
+</html>
