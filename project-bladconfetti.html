@@ -8,7 +8,6 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --green: #16a34a; --green-light: #dcfce7; --green-dark: #14532d;
       --navy: #1a2b4a; --blue: #2563eb; --blue-light: #dbeafe;
       --grey: #64748b; --border: #e2e8f0;
     }
@@ -20,24 +19,24 @@
       display: flex; align-items: center; padding: 0 40px; gap: 12px;
       position: sticky; top: 0; z-index: 10;
     }
-    .back { font-size: 13px; font-weight: 500; color: var(--green); text-decoration: none; }
+    .back { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; }
     .nav-sep { color: #cbd5e1; font-size: 13px; }
     .nav-page { font-size: 13px; color: var(--grey); }
 
     .hero {
-      background: linear-gradient(135deg, var(--green-dark) 0%, #166534 55%, var(--green) 100%);
+      background: linear-gradient(135deg, var(--navy) 0%, #1e3a6e 60%, #2563eb 100%);
       padding: 72px 40px 64px; position: relative; overflow: hidden;
     }
     .hero-grid {
       position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
       background-size: 32px 32px;
     }
     .hero-inner { position: relative; max-width: 820px; margin: 0 auto; }
-    .hero-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; color: #bbf7d0; margin-bottom: 18px; }
+    .hero-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; color: #93c5fd; margin-bottom: 18px; }
     .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: white; margin-bottom: 8px; }
     .hero-subtitle { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.5); margin-bottom: 20px; letter-spacing: 1px; }
-    .hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.75); max-width: 520px; line-height: 1.7; margin-bottom: 36px; }
+    .hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.7); max-width: 520px; line-height: 1.7; margin-bottom: 36px; }
     .hero-meta { display: flex; flex-wrap: wrap; gap: 32px; }
     .meta { display: flex; flex-direction: column; gap: 4px; }
     .meta-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.35); }
@@ -46,9 +45,7 @@
     .content { max-width: 820px; margin: 0 auto; padding: 56px 40px 80px; display: flex; flex-direction: column; gap: 48px; }
 
     .tags { display: flex; flex-wrap: wrap; gap: 8px; opacity: 0; animation: up 0.5s ease 0.15s forwards; }
-    .tag { font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 20px; }
-    .tag.tech { background: var(--blue-light); color: var(--blue); }
-    .tag.green { background: var(--green-light); color: var(--green); }
+    .tag { font-size: 12px; font-weight: 500; padding: 5px 14px; background: var(--blue-light); color: var(--blue); border-radius: 20px; }
 
     .section { opacity: 0; animation: up 0.5s ease 0.25s forwards; }
     .section:nth-child(3) { animation-delay: 0.35s; }
@@ -59,23 +56,23 @@
     .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
     .section-text { font-size: 15px; font-weight: 300; line-height: 1.8; color: #475569; }
 
-    .role-box { border-left: 3px solid var(--green); padding: 16px 20px; background: white; border-radius: 0 10px 10px 0; }
+    .role-box { border-left: 3px solid var(--blue); padding: 16px 20px; background: white; border-radius: 0 10px 10px 0; }
     .role-title { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
     .role-text { font-size: 14px; font-weight: 300; color: #475569; line-height: 1.7; }
 
     ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     ul.bullets li { font-size: 14px; font-weight: 300; color: #475569; line-height: 1.65; padding-left: 18px; position: relative; }
-    ul.bullets li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border: 1.5px solid var(--green); border-radius: 50%; }
+    ul.bullets li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border: 1.5px solid var(--blue); border-radius: 50%; }
 
     .skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
     .skill-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 8px; }
-    .skill-icon { width: 34px; height: 34px; background: var(--green-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; }
+    .skill-icon { width: 34px; height: 34px; background: var(--blue-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; }
     .skill-name { font-size: 14px; font-weight: 500; color: var(--navy); }
     .skill-desc { font-size: 12px; color: var(--grey); line-height: 1.5; }
 
     .back-row { border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: flex-end; opacity: 0; animation: up 0.5s ease 0.75s forwards; }
-    .back-btn { font-size: 13px; font-weight: 500; color: var(--green); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--green); border-radius: 8px; transition: background 0.2s, color 0.2s; }
-    .back-btn:hover { background: var(--green); color: white; }
+    .back-btn { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--blue); border-radius: 8px; transition: background 0.2s, color 0.2s; }
+    .back-btn:hover { background: var(--blue); color: white; }
 
     @keyframes up { to { opacity: 1; transform: translateY(0); } }
 
@@ -111,12 +108,12 @@
 
   <div class="content">
     <div class="tags">
-      <span class="tag tech">HTML</span>
-      <span class="tag tech">CSS</span>
-      <span class="tag tech">Python</span>
-      <span class="tag green">UX Design</span>
-      <span class="tag green">IT Consultancy</span>
-      <span class="tag green">Klantonderzoek</span>
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">Python</span>
+      <span class="tag">UX Design</span>
+      <span class="tag">IT Consultancy</span>
+      <span class="tag">Klantonderzoek</span>
     </div>
 
     <div class="section">
@@ -148,28 +145,28 @@
       <div class="skill-grid">
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="17" height="17" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="skill-name">HTML &amp; CSS</div>
           <div class="skill-desc">Front-end ontwikkeling van de calculator.</div>
         </div>
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="17" height="17" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="skill-name">Python</div>
           <div class="skill-desc">Back-end logica en aanbevelingsalgoritme.</div>
         </div>
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="17" height="17" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
           <div class="skill-name">UX / Gebruikersflow</div>
           <div class="skill-desc">Ontwerp van de klantreis in de tool.</div>
         </div>
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="17" height="17" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <div class="skill-name">Klantgericht</div>
           <div class="skill-desc">Onderzoek en vertaling naar oplossing.</div>
