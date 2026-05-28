@@ -52,6 +52,7 @@
     .section:nth-child(4) { animation-delay: 0.45s; }
     .section:nth-child(5) { animation-delay: 0.55s; }
     .section:nth-child(6) { animation-delay: 0.65s; }
+    .section:nth-child(7) { animation-delay: 0.75s; }
 
     .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
     .section-text { font-size: 15px; font-weight: 300; line-height: 1.8; color: #475569; }
@@ -69,6 +70,21 @@
     .skill-icon { width: 34px; height: 34px; background: var(--blue-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; }
     .skill-name { font-size: 14px; font-weight: 500; color: var(--navy); }
     .skill-desc { font-size: 12px; color: var(--grey); line-height: 1.5; }
+
+    .project-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      animation: up 0.5s ease 0.35s forwards;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     .back-row { border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: flex-end; opacity: 0; animation: up 0.5s ease 0.75s forwards; }
     .back-btn { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--blue); border-radius: 8px; transition: background 0.2s, color 0.2s; }
@@ -117,14 +133,14 @@
 
     <div class="section">
       <div class="section-title">Over het project</div>
-      <p class="section-text">Binnen het project heb ik bij het Command &amp; Control Ondersteuningscommando van het Ministerie van Defensie gewerkt aan een AI-systeem voor de automatische classificatie van complexe audio en signaalpatronen.</p>
+      <p class="section-text">Binnen het project heb ik bij het Command &amp; Control Ondersteuningscommando van het Ministerie van Defensie gewerkt aan een AI-systeem voor de automatische classificatie van geluids- en signaalpatronen. Dit systeem helpt gebruikers om audiobestanden real-time en automatisch te analyseren, zonder handmatige tussenkomst.</p>
     </div>
 
     <div class="section">
       <div class="section-title">Mijn rol</div>
       <div class="role-box">
         <div class="role-title">AI Engineer — Volledig projecttraject</div>
-        <div class="role-text">Van onderzoek en modelselectie tot optimalisatie en implementatie was ik verantwoordelijk voor het gehele technische traject.  Dat vroeg veel zelfstandigheid en een analytische aanpak, want er waren geen richtlijnen voor deze oplossing.</div>
+        <div class="role-text">Van onderzoek en modelselectie tot optimalisatie en implementatie was ik verantwoordelijk voor het gehele technische traject. Dat vroeg veel zelfstandigheid en een analytische benadering, gegeven de complexe requirementen en technische uitdagingen.</div>
       </div>
     </div>
 
@@ -135,6 +151,13 @@
         <li>Modellen geoptimaliseerd en geïmplementeerd op lokale hardware, zodat real-time automatische analyses mogelijk zijn zonder internetverbinding.</li>
         <li>Probleemoplossend en leergierig te werk gegaan bij het selecteren en testen van de juiste modellen voor dit specifieke gebruik.</li>
       </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Project Showcase</div>
+      <div class="project-image">
+        <img src="def_AI.png" alt="AI Audio Classificatie systeem" />
+      </div>
     </div>
 
     <div class="section">
@@ -156,7 +179,7 @@
           <div class="skill-desc">Classificatie van signaalpatronen.</div>
         </div>
         <div class="skill-card">
-          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div>
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
           <div class="skill-name">Analytisch denken</div>
           <div class="skill-desc">Modelselectie en probleemoplossing.</div>
         </div>
@@ -165,7 +188,7 @@
 
     <div class="section">
       <div class="section-title">Resultaat &amp; impact</div>
-      <p class="section-text">Het systeem maakt het mogelijk om audiobestanden automatisch en in real-time te analyseren en te classificeren, zonder handmatige tussenkomst. Dit versnelt het analyseproces aanzienlijk en verhoogt de nauwkeurigheid van classificatie.</p>
+      <p class="section-text">Het systeem maakt het mogelijk om audiobestanden automatisch en in real-time te analyseren en te classificeren, zonder handmatige tussenkomst. Dit versnelt het analyseproces aanzienlijk en vermindert de werkbelasting voor operators. Het systeem draait volledig lokaal, waardoor gevoelige informatie beveiligd blijft.</p>
     </div>
 
     <div class="back-row">
