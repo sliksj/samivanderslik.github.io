@@ -52,6 +52,7 @@
     .section:nth-child(4) { animation-delay: 0.45s; }
     .section:nth-child(5) { animation-delay: 0.55s; }
     .section:nth-child(6) { animation-delay: 0.65s; }
+    .section:nth-child(7) { animation-delay: 0.75s; }
 
     .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
     .section-text { font-size: 15px; font-weight: 300; line-height: 1.8; color: #475569; }
@@ -69,6 +70,21 @@
     .skill-icon { width: 34px; height: 34px; background: var(--blue-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; }
     .skill-name { font-size: 14px; font-weight: 500; color: var(--navy); }
     .skill-desc { font-size: 12px; color: var(--grey); line-height: 1.5; }
+
+    .project-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      animation: up 0.5s ease 0.35s forwards;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     .back-row { border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: flex-end; opacity: 0; animation: up 0.5s ease 0.75s forwards; }
     .back-btn { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--blue); border-radius: 8px; transition: background 0.2s, color 0.2s; }
@@ -118,14 +134,14 @@
 
     <div class="section">
       <div class="section-title">Over het project</div>
-      <p class="section-text">In samenwerking met Bladconfetti, een Nederlands bedrijf dat biologisch afbreekbare confetti maakt van bladeren, heb ik een interactieve Confetti Calculator ontwikkeld voor hun webshop. Met deze tool kunnen klanten snel uitrekenen hoeveel confetti zij nodig hebben voor hun evenement. Op basis van hun invoer krijgen zij direct passende productaanbevelingen te zien. Het doel was om de klantervaring te verbeteren, het aantal vragen over hoeveelheden te verminderen en de duurzame uitstraling van Bladconfetti verder te versterken.</p>
+      <p class="section-text">In samenwerking met Bladconfetti, een Nederlands bedrijf dat biologisch afbreekbare confetti maakt van bladeren, heb ik een interactieve Confetti Calculator ontwikkeld. Met deze tool kunnen klanten in een paar stappen precies berekenen hoeveel confetti zij voor hun evenement nodig hebben, inclusief persoonlijke productaanbevelingen.</p>
     </div>
 
     <div class="section">
       <div class="section-title">Mijn rol</div>
       <div class="role-box">
         <div class="role-title">IT Consultant — Onderzoek, ontwerp &amp; ontwikkeling</div>
-        <div class="role-text">Ik was verantwoordelijk voor het volledige traject: van klantonderzoek en het ontwerpen van de gebruikersflow tot het bouwen van een werkend prototype. Ik heb de wensen van klanten onderzocht en vertaald naar een tool die Bladconfetti kan helpen groeien.</div>
+        <div class="role-text">Ik was verantwoordelijk voor het volledige traject: van klantonderzoek en het ontwerpen van de gebruikersflow tot het bouwen van een werkend prototype. Ik heb de wensen van de klant in kaart gebracht en deze direct omgezet in een bruikbare oplossing.</div>
       </div>
     </div>
 
@@ -137,6 +153,13 @@
         <li>Een werkend prototype gebouwd met HTML, CSS en Python.</li>
         <li>Productaanbevelingen geïntegreerd op basis van de invoer van de gebruiker.</li>
       </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Project Showcase</div>
+      <div class="project-image">
+        <img src="bladconfetti1.png" alt="Confetti Calculator interface" />
+      </div>
     </div>
 
     <div class="section">
@@ -175,7 +198,7 @@
 
     <div class="section">
       <div class="section-title">Resultaat &amp; impact</div>
-      <p class="section-text">De Confetti Calculator verlaagt de drempel voor klanten om de juiste hoeveelheid te bestellen en vermindert het aantal klantvragen over hoeveelheden. Tegelijkertijd versterkt de tool de duurzame en professionele uitstraling van Bladconfetti, klanten worden direct geholpen en krijgen een ervaring die past bij het merk.</p>
+      <p class="section-text">De Confetti Calculator verlaagt de drempel voor klanten om de juiste hoeveelheid te bestellen en vermindert het aantal klantvragen over hoeveelheden. Tegelijkertijd verhoogt het de gemiddelde bestelwaarde door slimme productaanbevelingen.</p>
     </div>
 
     <div class="back-row">
