@@ -52,6 +52,7 @@
     .section:nth-child(4) { animation-delay: 0.45s; }
     .section:nth-child(5) { animation-delay: 0.55s; }
     .section:nth-child(6) { animation-delay: 0.65s; }
+    .section:nth-child(7) { animation-delay: 0.75s; }
 
     .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
     .section-text { font-size: 15px; font-weight: 300; line-height: 1.8; color: #475569; }
@@ -69,6 +70,32 @@
     .skill-icon { width: 34px; height: 34px; background: var(--blue-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; }
     .skill-name { font-size: 14px; font-weight: 500; color: var(--navy); }
     .skill-desc { font-size: 12px; color: var(--grey); line-height: 1.5; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      opacity: 0;
+      animation: up 0.5s ease 0.35s forwards;
+    }
+
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     .back-row { border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: flex-end; opacity: 0; animation: up 0.5s ease 0.75s forwards; }
     .back-btn { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--blue); border-radius: 8px; transition: background 0.2s, color 0.2s; }
@@ -117,14 +144,14 @@
 
     <div class="section">
       <div class="section-title">Over het project</div>
-      <p class="section-text">Voor de afdeling Inkoop-IT van het Ministerie van Defensie heb ik een centrale en goed gedocumenteerde applicatie ontwikkeld voor de inkoopkalender. Hierdoor kreeg management snel inzicht in volumes, budgetten, capaciteit, knelpunten en planning binnen inkooptrajecten. De bestaande Excel-overzichten werden hierdoor vervangen..</p>
+      <p class="section-text">Voor de afdeling Inkoop-IT van het Ministerie van Defensie heb ik een centrale en goed gedocumenteerde applicatie ontwikkeld voor de inkoopkalender. Hierdoor kreeg management direct inzicht in alle inkooptrajecten, budgetten, volumes en planning — in plaats van te vertrouwen op handmatige Excel-sheets.</p>
     </div>
 
     <div class="section">
       <div class="section-title">Mijn rol</div>
       <div class="role-box">
         <div class="role-title">IT Consultant — Ontwerp en implementatie</div>
-        <div class="role-text">Als IT Consultant was ik verantwoordelijk voor het ontwerpen, bouwen en beheren van de applicatie. Ik heb eerst goed gekeken naar hoe de afdeling werkte en waar de knelpunten zaten. Gedurende het project bleef ik in contact met de afdeling om te zorgen dat het systeem ook echt aansloot bij wat zij nodig hadden..</div>
+        <div class="role-text">Als IT Consultant was ik verantwoordelijk voor het ontwerpen, bouwen en beheren van de applicatie. Ik heb eerst goed gekeken naar hoe de afdeling werkte en waar de pijnpunten lagen, en heb vervolgens een oplossing gebouwd die past in hun workflow.</div>
       </div>
     </div>
 
@@ -136,6 +163,21 @@
         <li>Handmatige Excel-overzichten vervangen door een efficiënte digitale oplossing.</li>
         <li>Documentatie opgesteld zodat de applicatie ook na het project beheerbaar blijft.</li>
       </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Project Showcase</div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="def1.png" alt="Inkoopkalender interface 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="def2.png" alt="Inkoopkalender interface 2" />
+        </div>
+        <div class="gallery-item">
+          <img src="def3.png" alt="Inkoopkalender interface 3" />
+        </div>
+      </div>
     </div>
 
     <div class="section">
@@ -167,14 +209,14 @@
             <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <div class="skill-name">Klantgericht</div>
-          <div class="skill-desc"> Samenwerken met stakeholders.</div>
+          <div class="skill-desc">Samenwerken met stakeholders.</div>
         </div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-title">Resultaat &amp; impact</div>
-      <p class="section-text">De applicatie vervangt volledig de handmatige spreadsheets die eerder werden gebruikt. Management heeft nu real-time inzicht in alle inkooptrajecten, waardoor besluitvorming sneller en nauwkeuriger verloopt.</p>
+      <p class="section-text">De applicatie vervangt volledig de handmatige spreadsheets die eerder werden gebruikt. Management heeft nu real-time inzicht in alle inkooptrajecten, waardoor besluitvorming sneller en beter onderbouwd kan plaatsvinden. De documentatie zorgt ervoor dat de afdeling het systeem zelfstandig kan onderhouden en beheren.</p>
     </div>
 
     <div class="back-row">
