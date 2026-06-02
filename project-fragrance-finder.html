@@ -53,6 +53,27 @@
     .back-row { border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: flex-end; opacity: 0; animation: up 0.5s ease 0.85s forwards; }
     .back-btn { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--blue); border-radius: 8px; transition: background 0.2s, color 0.2s; }
     .back-btn:hover { background: var(--blue); color: white; }
+
+    .project-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      margin-bottom: 16px;
+    }
+    .project-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .project-image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 600px) {
+      .project-image-grid { grid-template-columns: 1fr; }
+    }
     @keyframes up { to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 600px) { .hero { padding: 48px 20px; } .content { padding: 40px 20px 60px; } nav { padding: 0 20px; } }
   </style>
@@ -167,8 +188,37 @@
     </div>
 
     <div class="section">
+      <div class="section-title">Showcase</div>
+      <div class="project-image">
+        <img src="Logo FF.png" alt="Fragrance Finder logo"/>
+      </div>
+      <div class="project-image">
+        <img src="FFL.png" alt="Fragrance Finder landingspagina"/>
+      </div>
+      <div class="project-image-grid">
+        <div class="project-image">
+          <img src="FFMAP.png" alt="Fragrance Finder kaart"/>
+        </div>
+        <div class="project-image">
+          <img src="FFPAR.png" alt="Fragrance Finder parfum aanbeveling"/>
+        </div>
+      </div>
+      <div class="project-image-grid">
+        <div class="project-image">
+          <img src="FFSAM.PNG" alt="Fragrance Finder samenstelling"/>
+        </div>
+        <div class="project-image">
+          <img src="FFVR.png" alt="Fragrance Finder vragenlijst"/>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="Schermafbeelding 2025-01-16 204055.png" alt="Fragrance Finder schermafbeelding"/>
+      </div>
+    </div>
+
+    <div class="section">
       <div class="section-title">Resultaat</div>
-      <p class="section-text">We hebben een volledig werkende demo opgeleverd en de finale gehaald van het Dragons Den-event. Het project liet zien dat we techniek en ondernemerschap konden combineren — van een werkende SaaS-applicatie tot een onderbouwd businessmodel met affiliate marketing en testerverkoop als inkomstenbronnen.</p>
+      <p class="section-text">We hebben een volledig werkende demo opgeleverd en de finale gehaald van het Dragons Den-event. Het project liet zien dat we techniek en ondernemerschap konden combineren. Van een werkende SaaS-applicatie tot een onderbouwd businessmodel met affiliate marketing en testerverkoop als inkomstenbronnen.</p>
     </div>
 
     <div class="back-row">
