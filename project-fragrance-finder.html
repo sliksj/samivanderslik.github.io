@@ -66,6 +66,10 @@
       height: auto;
       display: block;
     }
+    .project-image.logo-image {
+      max-width: 400px;
+      margin: 0 auto 16px;
+    }
     .project-image-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -73,9 +77,9 @@
     }
     @media (max-width: 600px) {
       .project-image-grid { grid-template-columns: 1fr; }
+      .project-image.logo-image { max-width: 300px; }
     }
     @keyframes up { to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 600px) { .hero { padding: 48px 20px; } .content { padding: 40px 20px 60px; } nav { padding: 0 20px; } }
   </style>
 </head>
 <body>
@@ -92,7 +96,7 @@
       <div class="hero-eyebrow">Hogeschool van Amsterdam · Dragons Den</div>
       <h1 class="hero-title">Fragrance Finder</h1>
       <div class="hero-subtitle">SaaS · Schoolproject</div>
-      <p class="hero-sub">Een applicatie die mensen helpt het parfum te vinden dat het beste bij hen past met directe productaanbevelingen, een kaart met winkels en een verdienmodel op basis van affiliate marketing en testerverkoop.</p>
+      <p class="hero-sub">Een applicatie die mensen helpt het parfum te vinden dat het beste bij hen past — met directe productaanbevelingen, een kaart met winkels en een verdienmodel op basis van a[...]</p>
       <div class="hero-meta">
         <div class="meta"><span class="meta-label">Periode</span><span class="meta-value">September 2024 — Januari 2025</span></div>
         <div class="meta"><span class="meta-label">Rol</span><span class="meta-value">Backend &amp; Frontend Developer</span></div>
@@ -116,14 +120,14 @@
 
     <div class="section">
       <div class="section-title">Over het project</div>
-      <p class="section-text">Fragrance Finder is een SaaS-applicatie die we als groep hebben ontwikkeld voor het Dragons Den-event van de HvA, waarbij echte ondernemers kwamen luisteren naar de pitches van studenten. Het idee: mensen vinden het moeilijk om een parfum te kiezen zonder het te ruiken. Onze app stelt een paar gerichte vragen en doet op basis daarvan een passende aanbeveling. Vanuit de app kon je direct doorklikken naar webshops zoals de Bijenkorf, inclusief kortingen of de mogelijkheid om een tester te bestellen. Op een kaart was ook te zien waar het parfum fysiek te koop was.</p>
+      <p class="section-text">Fragrance Finder is een SaaS-applicatie die we als groep hebben ontwikkeld voor het Dragons Den-event van de HvA, waarbij echte ondernemers kwamen luisteren naar de pitch[...]</p>
     </div>
 
     <div class="section">
       <div class="section-title">Mijn rol</div>
       <div class="role-box">
         <div class="role-title">Backend &amp; Frontend Developer — van database tot interface</div>
-        <div class="role-text">Ik was verantwoordelijk voor zowel de technische kant als een deel van het onderzoek. Aan de ene kant heb ik de database opgezet, de backend gebouwd en de frontend uitgewerkt. Aan de andere kant heb ik meegedaan aan het marktonderzoek naar de parfumbranche en meegeschreven aan het businessplan dat we hebben gepitched.</div>
+        <div class="role-text">Ik was verantwoordelijk voor zowel de technische kant als een deel van het onderzoek. Aan de ene kant heb ik de database opgezet, de backend gebouwd en de frontend uitge[...]</div>
       </div>
     </div>
 
@@ -131,7 +135,7 @@
       <div class="section-title">Wat heb ik gedaan?</div>
       <ul class="bullets">
         <li>De database ontworpen en opgezet met SQL voor het opslaan van parfumdata en gebruikersvoorkeuren.</li>
-        <li>De backend gebouwd in Python, inclusief de aanbevelingslogica op basis van gebruikersinvoer.</li>
+        <li>De backend gebouwd in Python — inclusief de aanbevelingslogica op basis van gebruikersinvoer.</li>
         <li>De frontend uitgewerkt in HTML en CSS, van de vragenlijst tot de resultatenpagina met kaart.</li>
         <li>Gebruikerstesten uitgevoerd om te kijken of de flow klopte en waar mensen vastliepen.</li>
         <li>Marktonderzoek gedaan naar de parfumbranche om ons businessmodel te onderbouwen.</li>
@@ -143,10 +147,10 @@
       <div class="section-title">Dragons Den</div>
       <div class="highlight-box">
         <div class="highlight-icon">
-          <svg width="18" height="18" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L[...]</svg>
         </div>
         <div class="highlight-text">
-          <strong>Finale gehaald</strong> van alle projecten binnen de HvA heeft ons team het gehaald tot de finale van het Dragons Den-event. We hebben een werkende demo en een volledig businessplan gepitched voor een panel van ondernemers.
+          <strong>Finale gehaald</strong> — van alle projecten binnen de HvA heeft ons team het gehaald tot de finale van het Dragons Den-event. We hebben een werkende demo en een volledig businessp[...]
         </div>
       </div>
     </div>
@@ -155,22 +159,22 @@
       <div class="section-title">Gebruikte skills</div>
       <div class="skill-grid">
         <div class="skill-card">
-          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 1[...]</svg></div>
           <div class="skill-name">Python</div>
           <div class="skill-desc">Backend en aanbevelingslogica.</div>
         </div>
         <div class="skill-card">
-          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 1[...]</svg></div>
           <div class="skill-name">HTML &amp; CSS</div>
           <div class="skill-desc">Frontend van de applicatie.</div>
         </div>
         <div class="skill-card">
-          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg></div>
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 [...]</svg></div>
           <div class="skill-name">SQL</div>
           <div class="skill-desc">Database ontwerp en beheer.</div>
         </div>
         <div class="skill-card">
-          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" c[...]</svg></div>
           <div class="skill-name">Gebruikerstesten</div>
           <div class="skill-desc">Testen en verbeteren van de flow.</div>
         </div>
@@ -180,7 +184,7 @@
           <div class="skill-desc">Analyse van de parfumbranche.</div>
         </div>
         <div class="skill-card">
-          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <div class="skill-icon"><svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M1[...]</svg></div>
           <div class="skill-name">Businessplan</div>
           <div class="skill-desc">Opstellen en pitchen.</div>
         </div>
@@ -189,7 +193,7 @@
 
     <div class="section">
       <div class="section-title">Showcase</div>
-      <div class="project-image">
+      <div class="project-image logo-image">
         <img src="Logo FF.png" alt="Fragrance Finder logo"/>
       </div>
       <div class="project-image">
@@ -218,7 +222,7 @@
 
     <div class="section">
       <div class="section-title">Resultaat</div>
-      <p class="section-text">We hebben een volledig werkende demo opgeleverd en de finale gehaald van het Dragons Den-event. Het project liet zien dat we techniek en ondernemerschap konden combineren. Van een werkende SaaS-applicatie tot een onderbouwd businessmodel met affiliate marketing en testerverkoop als inkomstenbronnen.</p>
+      <p class="section-text">We hebben een volledig werkende demo opgeleverd en de finale gehaald van het Dragons Den-event. Het project liet zien dat we techniek en ondernemerschap konden combineren[...]</p>
     </div>
 
     <div class="back-row">
