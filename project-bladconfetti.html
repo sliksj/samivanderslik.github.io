@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bladconfetti — Sami van der Slik</title>
+  <title>Confetti Calculator — Sami van der Slik</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #1a2b4a; --blue: #2563eb; --blue-light: #dbeafe;
-      --grey: #64748b; --border: #e2e8f0;
-    }
+    :root { --navy: #0a1f2e; --blue: #00d9ff; --blue-light: #1a4d5c; --grey: #64748b; --border: #e2e8f0; }
     body { font-family: 'DM Sans', sans-serif; background: #f8fafc; }
 
     nav {
@@ -24,7 +21,7 @@
     .nav-page { font-size: 13px; color: var(--grey); }
 
     .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, #1e3a6e 60%, #2563eb 100%);
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3a4a 60%, #00d9ff 100%);
       padding: 72px 40px 64px; position: relative; overflow: hidden;
     }
     .hero-grid {
@@ -33,7 +30,7 @@
       background-size: 32px 32px;
     }
     .hero-inner { position: relative; max-width: 820px; margin: 0 auto; }
-    .hero-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; color: #93c5fd; margin-bottom: 18px; }
+    .hero-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; color: #5dd9e8; margin-bottom: 18px; }
     .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: white; margin-bottom: 8px; }
     .hero-subtitle { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.5); margin-bottom: 20px; letter-spacing: 1px; }
     .hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.7); max-width: 520px; line-height: 1.7; margin-bottom: 36px; }
@@ -110,13 +107,13 @@
   <header class="hero">
     <div class="hero-grid"></div>
     <div class="hero-inner">
-      <div class="hero-eyebrow">Bladconfetti.nl · IT Consultancy</div>
+      <div class="hero-eyebrow">Bladconfetti · IT Consultancy</div>
       <h1 class="hero-title">Confetti Calculator</h1>
-      <div class="hero-subtitle">Bladconfetti project</div>
-      <p class="hero-sub">Interactieve calculator waarmee klanten snel kunnen berekenen hoeveel biologisch afbreekbare confetti zij nodig hebben voor hun evenement, inclusief directe productaanbevelingen.</p>
+      <div class="hero-subtitle">Interactieve Calculator</div>
+      <p class="hero-sub">Een interactieve web-applicatie waarmee klanten van Bladconfetti precies kunnen berekenen hoeveel biologisch afbreekbare confetti zij voor hun evenement nodig hebben.</p>
       <div class="hero-meta">
         <div class="meta"><span class="meta-label">Periode</span><span class="meta-value">Februari 2025 — Juni 2025</span></div>
-        <div class="meta"><span class="meta-label">Rol</span><span class="meta-value">IT Consultant</span></div>
+        <div class="meta"><span class="meta-label">Rol</span><span class="meta-value">Full-Stack Developer</span></div>
         <div class="meta"><span class="meta-label">Opdrachtgever</span><span class="meta-value">Bladconfetti</span></div>
       </div>
     </div>
@@ -129,7 +126,6 @@
       <span class="tag">Python</span>
       <span class="tag">UX Design</span>
       <span class="tag">IT Consultancy</span>
-      <span class="tag">Klantonderzoek</span>
     </div>
 
     <div class="section">
@@ -140,17 +136,18 @@
     <div class="section">
       <div class="section-title">Mijn rol</div>
       <div class="role-box">
-        <div class="role-title">IT Consultant — Onderzoek, ontwerp &amp; ontwikkeling</div>
-        <div class="role-text">Ik was verantwoordelijk voor het volledige traject: van klantonderzoek en het ontwerpen van de gebruikersflow tot het bouwen van een werkend prototype. Ik heb de wensen van de klant in kaart gebracht en deze direct omgezet in een bruikbare oplossing.</div>
+        <div class="role-title">Full-Stack Developer & UX Designer</div>
+        <div class="role-text">Ik heb de volledige applicatie ontworpen en gebouwd, van concept tot implementatie. Dit omvatte gebruikersonderzoek, interface-design, frontend-development en backend-logica voor de berekeningen.</div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-title">Wat heb ik gedaan?</div>
       <ul class="bullets">
-        <li>Klantonderzoek uitgevoerd naar de wensen en behoeften van de doelgroep van Bladconfetti.</li>
-        <li>De gebruikersflow ontworpen, de stappen die een klant doorloopt in de tool voor een goede klant ervaring.</li>
-        <li>Een werkend prototype gebouwd met HTML, CSS en Python.</li>
+        <li>Gebruikersonderzoek uitgevoerd om te begrijpen welke informatie klanten nodig hebben.</li>
+        <li>Een intuïtieve interface ontworpen die de calculator gemakkelijk maakt te gebruiken.</li>
+        <li>Frontend gebouwd met HTML, CSS en JavaScript voor een responsieve ervaring.</li>
+        <li>Backend-logica in Python geïmplementeerd voor nauwkeurige berekeningen.</li>
         <li>Productaanbevelingen geïntegreerd op basis van de invoer van de gebruiker.</li>
       </ul>
     </div>
@@ -167,45 +164,38 @@
       <div class="skill-grid">
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg width="17" height="17" fill="none" stroke="#00d9ff" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="skill-name">HTML &amp; CSS</div>
-          <div class="skill-desc">Front-end ontwikkeling van de calculator.</div>
+          <div class="skill-desc">Responsieve interface design.</div>
         </div>
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg width="17" height="17" fill="none" stroke="#00d9ff" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-desc">Interactieve UI-elementen.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <svg width="17" height="17" fill="none" stroke="#00d9ff" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="skill-name">Python</div>
-          <div class="skill-desc">Back-end logica en aanbevelingsalgoritme.</div>
+          <div class="skill-desc">Backend berekeningen.</div>
         </div>
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <svg width="17" height="17" fill="none" stroke="#00d9ff" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
-          <div class="skill-name">SQL</div>
-          <div class="skill-desc">Databeheer en queries.</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <div class="skill-name">UX / Gebruikersflow</div>
-          <div class="skill-desc">Ontwerp van de klantreis in de tool.</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <svg width="17" height="17" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <div class="skill-name">Klantgericht</div>
-          <div class="skill-desc">Onderzoek en vertaling naar oplossing.</div>
+          <div class="skill-name">UX Design</div>
+          <div class="skill-desc">Gebruikersonderzoek en interface.</div>
         </div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-title">Resultaat &amp; impact</div>
-      <p class="section-text">De Confetti Calculator verlaagt de drempel voor klanten om de juiste hoeveelheid te bestellen en vermindert het aantal klantvragen over hoeveelheden. Tegelijkertijd verhoogt het de gemiddelde bestelwaarde door slimme productaanbevelingen.</p>
+      <p class="section-text">De calculator helpt klanten efficiënt de juiste hoeveelheid confetti te kiezen, waardoor minder verspilling en betere klanttevredenheid resulteert. Dit has ook geleidt tot meer omzet voor Bladconfetti.</p>
     </div>
 
     <div class="back-row">
