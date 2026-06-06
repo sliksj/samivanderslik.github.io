@@ -158,6 +158,12 @@
      <div class="section">
       <div class="section-title">Endpoints en communicatie</div>
       <p class="section-text">Om het systeem te testen werkte ik met twee terminals tegelijk. In de ene draaide de backend via FastAPI, in de andere gebruikte ik Git Bash om handmatig requests te sturen naar de endpoints. Zo kon ik audiobestanden uploaden via <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px;">/upload</code> of <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px;">/upload_raw</code>, en daarna via <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px;">/analyze_file</code> de analyse starten. De backend stuurde het audiobestand vervolgens door naar het YAMNet-model, dat de resultaten terugstuurde als JSON. Die output was direct te zien in de terminal, wat het makkelijk maakte om te controleren of het model de juiste labels teruggaf.</p>
+      <div class="project-image" style="margin-top: 20px;">
+        <img src="Schermafbeelding_2026-06-06_150504.png" alt="Backend code en start command in terminal"/>
+        <ul class="bullets" style="padding: 8px 0 12px 0;">
+          <li>De backend opstarten via uvicorn in de terminal, met de FastAPI code en het YAMNet-model geladen op de achtergrond.</li>
+        </ul>
+      </div>
     </div>
 
   <div class="section">
